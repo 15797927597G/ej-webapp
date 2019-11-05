@@ -39,7 +39,9 @@ export default {
   data(){
     return {
       form:{
-        type:'customer'
+        type:'customer',
+        username:'customer1',
+        password:'123321'
       }
     }
   },

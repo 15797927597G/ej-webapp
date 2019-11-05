@@ -17,7 +17,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path:"/",
-    redirect:"/manager/home"
+    redirect:"/login"
   },
   {
     path: '/manager',
@@ -45,11 +45,20 @@ const routes = [
       path: 'order',
       component: Order,
     },{
+      path: 'order_confirm',
+      component: ()=>import('../views/manager/order/ConfirmOrder') 
+    },{
       path: 'user',
       component: User,
     },{
       path: 'address',
       component: ()=>import('../views/manager/address/Index') 
+    },{
+      path: 'product_list',
+      component: ()=>import('../views/manager/product/List') 
+    },{
+      path: 'product_details',
+      component: ()=>import('../views/manager/product/Details') 
     }]
   },
   {
@@ -60,7 +69,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
